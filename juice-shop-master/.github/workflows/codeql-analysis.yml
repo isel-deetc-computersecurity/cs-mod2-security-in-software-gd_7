@@ -1,8 +1,13 @@
 name: "CodeQL Scan"
 
 on:
-  push:
-  pull_request:
+  workflow_dispatch:
+    # (opcional) inputs:
+    inputs:
+      run-analysis:
+        description: 'Trigger CodeQL analysis'
+        required: false
+        default: 'true'
 
 jobs:
   analyze:
