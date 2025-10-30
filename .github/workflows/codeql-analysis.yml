@@ -1,7 +1,12 @@
 name: "CodeQL"
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:   # Permite executar manualmente no GitHub Actions
+    inputs:
+      run-analysis:
+        description: 'Aciona a análise CodeQL'
+        required: false
+        default: 'true
 
 jobs:
   analyze:
@@ -15,7 +20,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'javascript' ]  # Juice Shop é Node.js
+        language: [ 'javascript', 'typescript' ]  # Juice Shop é Node.js e Angular
 
     steps:
     - name: Checkout repository
