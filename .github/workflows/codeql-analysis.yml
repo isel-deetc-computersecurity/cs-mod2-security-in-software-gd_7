@@ -6,7 +6,7 @@ on:
       run-analysis:
         description: 'Aciona a análise CodeQL'
         required: false
-        default: 'true
+        default: 'true'
 
 jobs:
   analyze:
